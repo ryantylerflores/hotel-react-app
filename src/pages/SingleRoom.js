@@ -35,7 +35,7 @@ class SingleRoom extends Component {
 
     const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
     const [mainImg, ...defaultImg] = images;
-    console.log(breakfast)
+    
     return (
       <React.Fragment>
         <StyledHero img={mainImg || this.state.defaultBcg}>
