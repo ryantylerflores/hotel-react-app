@@ -12,6 +12,7 @@ class RoomProvider extends Component {
       featuredRooms: [],
       loading: true,
       type: 'all',
+      capacity: 1,
       price: 0,
       minPrice: 0,
       maxPrice: 0,
@@ -84,21 +85,17 @@ class RoomProvider extends Component {
     if (type !== 'all') {
       tempRooms = tempRooms.filter(room => room.type === type);
     } 
-    console.log(tempRooms);
 
     // filter by capacity
     if (capacity !== 1) {
       tempRooms = tempRooms.filter(room => room.capacity >= capacity)
     }
-    console.log(tempRooms);
 
     // filter by price
     tempRooms = tempRooms.filter(room => room.price <= price);
-    console.log(tempRooms);
 
     // filter by size
     tempRooms = tempRooms.filter(room => room.size >= minSize && room.size <= maxSize);
-    console.log(tempRooms);
 
     // filter by breakfast
     if(breakfast) {
@@ -108,7 +105,6 @@ class RoomProvider extends Component {
     // filter by pets
     if(pets) {
       tempRooms = tempRooms.filter(room => room.pets === true);
-      console.log(tempRooms);
     }
 
     // set state for sorted rooms
